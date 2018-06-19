@@ -1,0 +1,42 @@
+[user]
+	name = mactkg
+	email = mactkg@gmail.com
+[core]
+  quotepath = false
+  autoCRLF = false
+  editor = /usr/local/bin/nvim
+	excludesfile = ~/.gitignore
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+  grep = auto
+[alias]
+  st = status
+  co = checkout
+  ci = commit -v
+  di = diff
+  br = branch
+  pl = !git pull --rebase && git submodule update --init
+  lg = log -p --stat --abbrev-commit --decorate --topo-order
+  lg-r = log -p --stat --abbrev-commit --decorate --topo-order --reverse
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[fetch]
+  prune = true
+[commit]
+	template = ~/.gitmessage
+[ghq]
+  root = ~/local/src
+[include]
+    path = ~/.gitconfig.secrets
+[credential]
+	helper = osxkeychain
+[url "https://"]
+	insteadOf = git://
+[pr-release]
+	token = 584384ff34831d50be22aadf7baa6229186782cd

@@ -1,0 +1,6 @@
+bind main    <Ctrl-r> !git rebase -i %(commit)
+bind diff    <Ctrl-r> !git rebase -i %(commit)
+
+set main-view = id date author commit-title:graph=yes,refs=yes
+set id-width = 8
+set diff-context = 6

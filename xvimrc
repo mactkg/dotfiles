@@ -1,0 +1,38 @@
+" keybind
+noremap ; :
+noremap : ;
+
+" tab
+set smarttab
+set expandtab
+set tabstop=2
+set shiftwidth=2
+set shiftround
+set ambiwidth=double
+
+" indent
+set smartindent
+set autoindent
+set shiftround
+let g:indentLine_color_term = 239
+
+set backspace=2
+set virtualedit=all
+
+" search
+set showmatch
+set hlsearch
+set ignorecase
+set smartcase
+set incsearch
+set wrapscan
+noremap <Esc><Esc> :nohlsearch<CR><Esc>
+
+" command
+set wildmode=longest:full,full
+set wildmenu
+set shellslash
+set cinoptions+=:0,g0 " don't indent when I make a label
+set hlsearch
+set infercase
+ 

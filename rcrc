@@ -1,0 +1,1 @@
+EXCLUDES="zsh/colors README.md secrets"

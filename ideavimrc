@@ -1,0 +1,19 @@
+" search
+set showmatch
+set hlsearch
+set ignorecase
+set smartcase
+set incsearch
+set wrapscan
+noremap <Esc><Esc> :nohlsearch<CR><Esc>
+
+" keybind
+noremap ; :
+noremap : ;
+
+" move
+nnoremap <Tab> %
+vnoremap <Tab> %
+
+" vim-surround  emulate
+set surround

@@ -1,0 +1,89 @@
+# python
+[[plugins]]
+repo  = 'lambdalisue/vim-django-support'
+on_ft = ['python', 'python3', 'djangohtml']
+
+[[plugins]]
+repo  = 'jmcantrell/vim-virtualenv'
+on_ft = ['python', 'python3', 'djangohtml']
+
+# ruby
+[[plugins]]
+repo  = 'taichouchou2/vim-endwise.git'
+on_ft = ['ruby']
+
+[[plugins]]
+repo  = 'tpope/vim-rails'
+on_ft = ['ruby']
+
+[[plugins]]
+repo  = 'vim-ruby/vim-ruby'
+on_ft = ['ruby']
+
+# perl
+[[plugins]]
+repo  = 'petdance/vim-perl'
+on_ft = ['perl']
+
+[[plugins]]
+repo  = 'hotchpotch/perldoc-vim'
+on_ft = ['perl']
+
+
+# javascript
+[[plugins]]
+repo  = 'jelera/vim-javascript-syntax'
+on_ft = ['javascript']
+
+[[plugins]]
+repo  = 'myhere/vim-nodejs-complete'
+on_ft = ['javascript']
+
+[[plugins]]
+repo  = 'pangloss/vim-javascript'
+on_ft = ['jsx']
+
+[[plugins]]
+repo  = 'mxw/vim-jsx'
+on_ft = ['jsx']
+
+
+# cpp
+[[plugins]]
+repo        = 'justmao945/vim-clang'
+on_ft       = ['c', 'cpp']
+hook_source = 'source ~/.config/nvim/rc/plugins/clang.rc.vim'
+
+
+# applescript
+[[plugins]]
+# repo  = 'vim-scripts/applescript.config/nvim'
+repo  = 'vim-scripts/applescript.vim'
+on_ft = 'applescript'
+
+
+# nginx
+[[plugins]]
+# repo  = 'vim-scripts/nginx.config/nvim'
+repo  = 'vim-scripts/nginx.vim'
+on_ft = 'nginx'
+
+
+# vim
+[[plugins]]
+repo = 'Shougo/neocomplete.vim'
+on_i = 1
+hook_source = '''
+  let g:neocomplete#enable_at_startup = 1
+  source ~/.config/nvim/rc/plugins/neocomplete.rc.vim
+'''
+
+[[plugins]]
+repo = 'Shougo/neosnippet'
+depends = ['neosnippet-snippets']
+on_i = 1
+hook_source = 'source ~/.config/nvim/rc/plugins/neosnippet.rc.vim'
+
+[[plugins]]
+repo = 'Shougo/neco-vim'
+on_ft = 'vim'

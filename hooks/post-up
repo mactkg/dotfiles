@@ -1,0 +1,14 @@
+#!/bin/sh
+RCROOT=$(cd $(dirname $0)/.. && pwd)
+
+if type brew; then
+  echo 'homebrew is already installed'
+else
+  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
+
+if [ ! -e $HOME/.zsh/colors/dircolors-solarized ]; then
+  git clone https://github.com/seebi/dircolors-solarized $HOME/.zsh/colors/dircolors-solarized
+fi
+
+cp -n $RCROOT/secrets $HOME/.secrets
