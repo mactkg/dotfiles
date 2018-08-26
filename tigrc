@@ -1,6 +1,9 @@
 bind main    <Ctrl-r> !git rebase -i %(commit)
 bind diff    <Ctrl-r> !git rebase -i %(commit)
 
+bind main    <Ctrl-p> !@sh -c "echo $(cd ./%(repo:cdup) && pwd) | sed -e 's/\\/.*\\/\\(.*\\/.*\\)/\\1/g' | xargs -I_ open 'https://github.com/_/issues?q=is:merged %(commit)'"
+bind diff    <Ctrl-p> !@sh -c "echo $(cd ./%(repo:cdup) && pwd) | sed -e 's/\\/.*\\/\\(.*\\/.*\\)/\\1/g' | xargs -I_ open https://github.com/_/issues?q=is:merged %(commit)"
+
 set main-view = id date author commit-title:graph=yes,refs=yes
 set id-width = 8
 set diff-context = 6
