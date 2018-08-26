@@ -40,3 +40,5 @@
 	insteadOf = git://
 [pr-release]
 	token = 584384ff34831d50be22aadf7baa6229186782cd
+[merge]
+	tool = vimdiff
