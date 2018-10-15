@@ -24,7 +24,7 @@
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
 [mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [fetch]
   prune = true
@@ -35,9 +35,7 @@
 [include]
     path = ~/.gitconfig.secrets
 [credential]
-	helper = osxkeychain
-[url "https://"]
-	insteadOf = git://
+  helper = osxkeychain
 [pr-release]
 	token = 584384ff34831d50be22aadf7baa6229186782cd
 [merge]
