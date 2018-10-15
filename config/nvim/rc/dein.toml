@@ -44,3 +44,6 @@ on_ft = 'toml'
 
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'
+
+[[plugins]]
+repo = 'ludovicchabant/vim-gutentags'
