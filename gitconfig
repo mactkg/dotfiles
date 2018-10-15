@@ -5,7 +5,7 @@
   quotepath = false
   autoCRLF = false
   editor = /usr/local/bin/nvim
-	excludesfile = ~/.gitignore
+  excludesfile = ~/.gitignore
 [color]
   diff = auto
   status = auto

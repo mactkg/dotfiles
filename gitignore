@@ -26,6 +26,7 @@ Temporary Items
 .apdisk
 
 .zsh/.zcompdump
+tags
 .tags
 .tags1
 
@@ -37,3 +38,5 @@ vendor/
 
 .vscode
 .envrc
+
+mactkg_sandbox/
