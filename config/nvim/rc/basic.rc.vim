@@ -60,3 +60,6 @@ vnoremap <Tab> %
 " shell
 set sh=zsh
 tnoremap <silent> <ESC> <C-\><C-n>
+
+" filetype
+autocmd BufRead,BufNewFile Fastfile setfiletype ruby
