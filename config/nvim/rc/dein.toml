@@ -50,3 +50,7 @@ repo = 'ludovicchabant/vim-gutentags'
 
 [[plugins]]
 repo = 'vim-jp/vimdoc-ja'
+
+[[plugins]]
+repo = 'Shougo/defx.nvim'
+hook_source = 'source ~/.config/nvim/rc/plugins/defx.rc.vim'

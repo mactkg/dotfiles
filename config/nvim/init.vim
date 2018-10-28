@@ -50,5 +50,4 @@ au BufRead,BufNewFile *.jsx set filetype=javascript.jsx
 
 call s:source_rc('basic.rc.vim')
 call s:source_rc('view.rc.vim')
-call s:source_rc('netrw.rc.vim')
 call s:source_rc('encoding.rc.vim')
