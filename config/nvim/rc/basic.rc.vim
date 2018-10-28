@@ -63,3 +63,6 @@ tnoremap <silent> <ESC> <C-\><C-n>
 
 " filetype
 autocmd BufRead,BufNewFile Fastfile setfiletype ruby
+
+" help
+set helplang=ja,en

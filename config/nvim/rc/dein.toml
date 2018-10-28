@@ -47,3 +47,6 @@ repo = 'Shougo/neosnippet-snippets'
 
 [[plugins]]
 repo = 'ludovicchabant/vim-gutentags'
+
+[[plugins]]
+repo = 'vim-jp/vimdoc-ja'
