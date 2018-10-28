@@ -87,3 +87,16 @@ hook_source = 'source ~/.config/nvim/rc/plugins/neosnippet.rc.vim'
 [[plugins]]
 repo = 'Shougo/neco-vim'
 on_ft = 'vim'
+
+# swift
+[[plugins]]
+repo = 'keith/swift.vim'
+on_ft = 'swift'
+
+[[plugins]]
+repo = 'landaire/deoplete-swift'
+on_ft = 'swift'
+
+[[plugins]]
+repo = 'kballard/vim-swift'
+on_ft = 'swift'
