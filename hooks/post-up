@@ -12,3 +12,4 @@ if [ ! -e $HOME/.zsh/colors/dircolors-solarized ]; then
 fi
 
 cp -n $RCROOT/secrets $HOME/.secrets
+cp $RCROOT/zsh/.zshrc $HOME/.zsh/.zshrc
