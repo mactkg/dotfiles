@@ -29,6 +29,7 @@ set virtualedit=all
 
 " search
 set showmatch
+set matchtime=1
 set hlsearch
 set ignorecase
 set smartcase
