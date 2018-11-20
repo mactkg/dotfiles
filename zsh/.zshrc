@@ -26,7 +26,6 @@ compinit -Cu
 
 
 # aliases
-alias a='atom .'
 alias c='cd'
 alias l='ls'
 alias t='tmux'
