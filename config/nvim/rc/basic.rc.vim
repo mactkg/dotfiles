@@ -20,6 +20,10 @@ set autoindent
 set shiftround
 let g:indentLine_color_term = 239
 
+" display
+set wrap
+set display=lastline
+
 set backspace=2
 set virtualedit=all
 
