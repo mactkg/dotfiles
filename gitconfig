@@ -16,7 +16,7 @@
   co = checkout
   ci = commit -v
   di = diff
-  br = branch
+  br = branch -v
   pl = !git pull --rebase && git submodule update --init
   lg = log -p --stat --abbrev-commit --decorate --topo-order
   lg-r = log -p --stat --abbrev-commit --decorate --topo-order --reverse
@@ -40,3 +40,5 @@
 	token = 584384ff34831d50be22aadf7baa6229186782cd
 [merge]
 	tool = vimdiff
+[pull]
+	rebase = false
