@@ -5,7 +5,7 @@
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
 
 # Thumbnails
 ._*
@@ -36,7 +36,5 @@ vendor/
 .idea/
 *.iml
 
-.vscode
 .envrc
 
-mactkg_sandbox/
