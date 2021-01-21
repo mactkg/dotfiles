@@ -8,3 +8,6 @@ set main-view = id date author commit-title:graph=yes,refs=yes
 set id-width = 8
 set diff-context = 6
 set vertical-split = no
+
+# show diff at merge commit
+set diff-options = -m --first-parent
