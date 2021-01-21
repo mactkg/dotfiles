@@ -7,3 +7,4 @@ bind diff    <Ctrl-p> !@sh -c "echo $(cd ./%(repo:cdup) && pwd) | sed -e 's/\\/.
 set main-view = id date author commit-title:graph=yes,refs=yes
 set id-width = 8
 set diff-context = 6
+set vertical-split = no
