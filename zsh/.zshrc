@@ -78,17 +78,23 @@ function precmd () {
 
 }
 
-function new () {
-  REPO="$GHQ_ROOT/github.com/mactkg/$1"
+function _new () {
+  REPO="$GHQ_ROOT/github.com/$1/$2"
   mkdir -p $REPO
   cd $REPO
   git init
 }
 
+function new() {
+  _new mactkg $1
+}
+
+function new-pg () {
+  _new mactkg-playground $1
+}
+
 function new-rails () {
-  REPO="$GHQ_ROOT/github.com/mactkg/$1"
-  mkdir -p $REPO
-  cd $REPO
+  new $1
   bundle init
   echo "gem 'rails'" >> Gemfile
   bundle -j8
