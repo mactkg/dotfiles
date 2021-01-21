@@ -3,8 +3,7 @@
 	email = mactkg@gmail.com
 [core]
   quotepath = false
-  autoCRLF = false
-  editor = /usr/local/bin/nvim
+	autocrlf = input
   excludesfile = ~/.gitignore
 [color]
   diff = auto
@@ -22,9 +21,8 @@
   lg-r = log -p --stat --abbrev-commit --decorate --topo-order --reverse
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
 [mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [fetch]
   prune = true
@@ -33,7 +31,7 @@
 [ghq]
   root = ~/local/src
 [include]
-    path = ~/.gitconfig.secrets
+  path = ~/.gitconfig.secrets
 [credential]
   helper = osxkeychain
 [pr-release]
