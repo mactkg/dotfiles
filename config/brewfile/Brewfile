@@ -1,139 +1,51 @@
+require './utils.rb'
 
-# Other Homebrew packages
-brew aubio
-brew autoconf
-brew automake
-brew avr-binutils
-brew avr-gcc
-brew avrdude
-brew brew-file
-brew chromedriver
-brew cmake
-brew cocoapods
-brew coreutils
-brew ctags
-brew dfu-programmer
-brew direnv
-brew ffmpeg
-brew flac
-brew fontconfig
-brew freetype
-brew gd
-brew gdbm
-brew gettext
-brew gibo
-brew git
-brew git-flow
-brew gmp
-brew go
-brew gradle
-brew graphviz
-brew highlight
-brew hub
-brew icu4c
-brew ideviceinstaller
-brew ios-deploy
-brew jemalloc
-brew jpeg
-brew jq
-brew lame
-brew libelf
-brew libevent
-brew libftdi0
-brew libgit2
-brew libimobiledevice
-brew libmpc
-brew libogg
-brew libplist
-brew libpng
-brew libsndfile
-brew libssh2
-brew libtasn1
-brew libtermkey
-brew libtiff
-brew libtool
-brew libusb
-brew libusb-compat
-brew libuv
-brew libvorbis
-brew libvterm
-brew libxml2
-brew libyaml
-brew libzip
-brew lua
-brew luajit
-brew mas
-brew maven
-brew mpfr
-brew msgpack
-brew mysql
-brew neovim
-brew node
-brew node-build
-brew numpy
-brew oniguruma
-brew openssl
-brew pcre
-brew peco
-brew perl
-brew pkg-config
-brew python
-brew python@2
-brew rbenv
-brew rbenv-aliases
-brew rbenv-ctags
-brew rbenv-default-gems
-brew rcm
-brew readline
-brew reattach-to-user-namespace
-brew redis
-brew ruby
-brew ruby-build
-brew sqlite
-brew ssh-copy-id
-brew terminal-notifier
-brew tig
-brew tldr
-brew tmux
-brew unibilium
-brew usbmuxd
-brew vim
-brew webp
-brew x264
-brew xvid
-brew xz
-brew yarn
-brew zsh --with-pcre
-brew zsh-syntax-highlighting
+cask_args appdir: "/Applications"
 
-# Other Cask applications
-cask alfred
-cask anaconda
-cask coteditor
-cask dash
-cask discord
-cask docker
-cask firefox
-cask franz
-cask google-chrome
-cask google-cloud-sdk
-cask google-japanese-ime
-cask hyper
-cask java8
-cask karabiner-elements
-cask mysqlworkbench
-cask qt-creator
-cask sequel-pro
-cask slack
-cask sonic-pi
-cask spotify
-cask supercollider
-cask virtualbox
-cask virtualbox-extension-pack
-cask visual-studio-code
+brew "cocoapods"
+brew "coreutils"
+brew "ctags"
+brew "direnv"
+brew "ffmpeg"
+brew "gibo"
+brew "git"
+brew "go"
+brew "highlight"
+brew "jq"
+brew_skip_m1 "mas"
+brew "neovim"
+brew "pcre"
+brew "peco"
+brew "rcm"
+brew "reattach-to-user-namespace"
+brew "ssh-copy-id"
+brew "terminal-notifier"
+brew "tig"
+brew "tldr"
+brew "tmux"
+brew "zsh"
+brew "zsh-syntax-highlighting"
+
+cask "alfred"
+cask "coteditor"
+cask "dash"
+cask "discord"
+cask "docker"
+cask "google-chrome"
+cask_skip_m1 "google-cloud-sdk"
+cask "karabiner-elements"
+cask "sequel-pro"
+cask "slack"
+cask "sonic-pi"
+cask "spotify"
+cask "visual-studio-code"
+
+if is_m1?
+    puts "Skip installing MAS applications because mas command not supported m1 processor"
+    return
+end
 
 # App Store applications
-appstore 1302002064 djay Pro 2 (2.0.4)
-appstore 926036361 LastPass (3.25.0)
-appstore 539883307 LINE (5.8.0)
-appstore 441258766 Magnet (2.1.0)
+mas "LastPass", id: 926036361
+mas "LINE", id: 539883307
+mas "Magnet", id: 441258766 
