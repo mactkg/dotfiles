@@ -1,29 +1,33 @@
 . $HOME/.secrets
 
-export SHELL=/usr/local/bin/zsh
+# remove overlapping
+typeset -U path cdpath fpath manpath
+
+# set sudo path
+typeset -xT SUDO_PATH sudo_path
+typeset -U sudo_path
+sudo_path=({/usr/local,/usr,}/sbin(N-/))
+
+# homebrew setting
+if [ -d /usr/local/bin ]; then
+  eval $(/usr/local/bin/brew shellenv)
+else
+  eval $(/opt/homebrew/bin/brew shellenv)
+fi
+export PATH=/sbin:/usr/sbin:$HOME/local/bin:$PATH
+
+fpath=(~/.zsh/completion $fpath)
+fpath=($HOMEBREW_PREFIX/share/zsh-completions $fpath)
+fpath=($HOMEBREW_PREFIX/share/zsh/site-functions $fpath)
+autoload -Uz compinit
+compinit -Cu
+
+export SHELL=`which zsh`
 export GREP_OPTIONS='--color=auto'
 export EDITOR=nvim
 export NVIM_LISTEN_ADDRESS=/tmp/nvimsocket
 export GHQ_ROOT=$HOME/local/src
-export DYLIB_DYLOAD=/usr/local/lib:$DYLIB_DYLOAD
-
-typeset -U path cdpath fpath manpath
-
-typeset -xT SUDO_PATH sudo_path
-typeset -U sudo_path
-sudo_path=({/usr/local,/usr,}/sbin(N-/))
-export PATH=/usr/local/bin:/usr/local/share:$PATH
-export PATH=/sbin:/usr/sbin:$HOME/local/bin:/usr/local/sbin:$PATH
-export PATH="/usr/local/anaconda3/bin:$PATH"
-export PATH="$HOME/.yarn/bin:`yarn global bin`:$PATH"
-export PATH="$PATH":"~/.pub-cache/bin"
-
-fpath=(~/.zsh/completion $fpath)
-fpath=(/usr/local/share/zsh-completions $fpath)
-fpath=($(/usr/local/bin/brew --prefix)/share/zsh/site-functions $fpath)
-autoload -Uz compinit
-compinit -Cu
-
+export DYLIB_DYLOAD=$HOMEBREW_PREFIX/lib:$DYLIB_DYLOAD
 
 # aliases
 alias c='cd'
@@ -52,7 +56,6 @@ alias d-c='docker-compose'
 
 ### thefuck
 alias fuck='$(thefuck $(fc -ln -1))'
-alias linehack='SHELL=/bin/bash mosh linehack'
 
 # direnv
 eval "$(direnv hook zsh)"
@@ -104,11 +107,13 @@ function new-rails () {
 
 
 # autojump
-[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+[ -f $HOMEBREW_PREFIX/etc/profile.d/autojump.sh ] && . $HOMEBREW_PREFIX/etc/profile.d/autojump.sh
 
 # gcloud / kubectl
-source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
-source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
+if [ -d "$HOMEBREW_PREFIX/Caskroom/google-cloud-sdk" ]; then
+  source '$HOMEBREW_PREFIX/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
+  source '$HOMEBREW_PREFIX/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
+fi
 
 function kubectl() {
   if ! type __start_kubectl >/dev/null 2>&1; then
