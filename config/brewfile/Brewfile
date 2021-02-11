@@ -2,13 +2,18 @@ require './utils.rb'
 
 cask_args appdir: "/Applications"
 
+brew "asdf"
 brew "cocoapods"
 brew "coreutils"
 brew "ctags"
+brew "curl"
 brew "direnv"
 brew "ffmpeg"
+brew "gawk"
+brew "ghq"
 brew "gibo"
 brew "git"
+brew "gpg"
 brew "go"
 brew "highlight"
 brew "jq"
