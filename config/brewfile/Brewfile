@@ -1,6 +1,7 @@
 require './utils.rb'
 
 cask_args appdir: "/Applications"
+tap "mongodb/brew"
 
 brew "asdf"
 brew "cocoapods"
@@ -18,6 +19,7 @@ brew "go"
 brew "highlight"
 brew "jq"
 brew_skip_m1 "mas"
+brew "mongodb-community"
 brew "neovim"
 brew "pcre"
 brew "peco"
