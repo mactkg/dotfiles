@@ -129,6 +129,7 @@ function __loadzsh {
 
 __loadzsh zsh.zsh
 __loadzsh anyenv.zsh
+__loadzsh asdf.zsh
 __loadzsh git.zsh
 __loadzsh go.zsh
 __loadzsh peco.zsh
