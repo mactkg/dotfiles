@@ -54,6 +54,10 @@ alias ce='carton exec --'
 alias be='bundle exec'
 alias d-c='docker-compose'
 
+if which 'code-insiders' > /dev/null ; then
+  alias code='code-insiders'
+fi
+
 ### thefuck
 alias fuck='$(thefuck $(fc -ln -1))'
 
