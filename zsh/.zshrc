@@ -111,8 +111,13 @@ function new-rails () {
 
 # gcloud / kubectl
 if [ -d "$HOMEBREW_PREFIX/Caskroom/google-cloud-sdk" ]; then
-  source '$HOMEBREW_PREFIX/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
-  source '$HOMEBREW_PREFIX/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
+  source "$HOMEBREW_PREFIX/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+  source "$HOMEBREW_PREFIX/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+fi
+
+if [ -d "$HOME/local/opt/google-cloud-sdk" ]; then
+  source "$HOME/local/opt/google-cloud-sdk/path.zsh.inc"
+  source "$HOME/local/opt/google-cloud-sdk/completion.zsh.inc"
 fi
 
 function kubectl() {
