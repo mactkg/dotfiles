@@ -12,9 +12,11 @@ function chpwd() { gls -G --color=auto }
 
 
 # Prompt
+ARCH=`uname -m`
 PROMPT="
 [%n] %{${fg[yellow]}%}%~%{${reset_color}%}
 %(?.%{$fg[green]%}.%{$fg[blue]%})%(?!(*'-') <!(*;-;%)? <)%{${reset_color}%} "
+RPROMPT="[${ARCH}]"
 PROMPT2='[%n]> '
 
 SPROMPT="%{$fg[red]%}%{$suggest%}(*'~'%)? < もしかして %B%r%b %{$fg[red]%}かな? [そう!(y), 違う!(n),a,e]:${reset_color} " 
