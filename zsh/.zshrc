@@ -54,6 +54,8 @@ alias ce='carton exec --'
 alias be='bundle exec'
 alias d-c='docker-compose'
 
+alias x86='arch -x86_64'
+
 if which 'code-insiders' > /dev/null ; then
   alias code='code-insiders'
 fi
