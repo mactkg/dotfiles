@@ -5,6 +5,7 @@
   quotepath = false
 	autocrlf = input
   excludesfile = ~/.gitignore
+	editor = vi
 [color]
   diff = auto
   status = auto
