@@ -40,6 +40,7 @@ cask "discord"
 cask "docker"
 cask "google-chrome"
 cask_skip_m1 "google-cloud-sdk"
+cask "jetbrains-toolbox"
 cask "karabiner-elements"
 cask "kindle"
 cask "sequel-pro"
@@ -56,4 +57,4 @@ end
 # App Store applications
 mas "LastPass", id: 926036361
 mas "LINE", id: 539883307
-mas "Magnet", id: 441258766 
+mas "Magnet", id: 441258766
