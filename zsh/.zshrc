@@ -64,6 +64,13 @@ alias fuck='$(thefuck $(fc -ln -1))'
 # direnv
 eval "$(direnv hook zsh)"
 
+# gh
+if [ -d /usr/local/bin/gh ]; then
+  eval "$(gh completion -s zsh)"
+
+fi
+
+
 function dirresolve() {
   cd `pwd -P`
 }
