@@ -1,1 +1,1 @@
-EXCLUDES="zsh/colors README.md secrets"
+EXCLUDES="zsh/colors README.md secrets config/brewfile"
