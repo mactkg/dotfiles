@@ -63,6 +63,10 @@ mas "Bitwarden", id: 1352778147
 mas "LINE", id: 539883307
 mas "Magnet", id: 441258766
 mas "Quick View Calendar (2.4)", id: 1087080039
+mas "Things 3", id: 904280696
+mas "DevCleaner for Xcode", id 1388020431
+mas "Boop", id: 1518425043
+mas "LadioCast", id: 411213048
 
 ## Safari ext.
 mas "Grammarly for Safari", id: 1462114288
