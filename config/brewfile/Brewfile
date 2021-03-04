@@ -60,7 +60,12 @@ end
 
 # App Store applications
 mas "Bitwarden", id: 1352778147
-mas "Grammarly for Safari", id: 1462114288
 mas "LINE", id: 539883307
 mas "Magnet", id: 441258766
 mas "Quick View Calendar (2.4)", id: 1087080039
+
+## Safari ext.
+mas "Grammarly for Safari", id: 1462114288
+mas "Save to Pocket", id: 1477385213
+mas "Userscripts", id: 1463298887
+mas "Vimari", id: 1480933944
