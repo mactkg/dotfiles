@@ -58,6 +58,7 @@ if is_m1?
 end
 
 # App Store applications
-mas "LastPass", id: 926036361
+mas "Bitwarden", id: 1352778147
+mas "Grammarly for Safari", id: 1462114288
 mas "LINE", id: 539883307
 mas "Magnet", id: 441258766
