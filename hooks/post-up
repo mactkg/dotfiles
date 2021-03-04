@@ -4,7 +4,7 @@ RCROOT=$(cd $(dirname $0)/.. && pwd)
 if type brew; then
   echo 'homebrew is already installed'
 else
-  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 fi
 
 if [ ! -e $HOME/.zsh/colors/dircolors-solarized ]; then
