@@ -38,6 +38,7 @@ brew "zsh-syntax-highlighting"
 
 cask "alfred"
 cask "coteditor"
+cask "clipy"
 cask "dash"
 cask "discord"
 cask "docker"
@@ -62,3 +63,4 @@ mas "Bitwarden", id: 1352778147
 mas "Grammarly for Safari", id: 1462114288
 mas "LINE", id: 539883307
 mas "Magnet", id: 441258766
+mas "Quick View Calendar (2.4)", id: 1087080039
