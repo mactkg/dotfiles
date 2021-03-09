@@ -20,7 +20,7 @@ brew "gpg"
 brew "go"
 brew "highlight"
 brew "jq"
-brew_skip_m1 "mas"
+brew "mas"
 brew "mongodb-community"
 brew "neovim"
 brew "pcre"
@@ -53,11 +53,6 @@ cask "skype"
 cask "slack"
 cask "spotify"
 cask "visual-studio-code"
-
-if is_m1?
-    puts "Skip installing MAS applications because mas command not supported m1 processor"
-    return
-end
 
 # App Store applications
 mas "Bitwarden", id: 1352778147
