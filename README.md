@@ -4,5 +4,5 @@
 
 ## install
 ```
-$ rcup
+$ RCRC=~/.dotfiles/rcrc rcup
 ```
