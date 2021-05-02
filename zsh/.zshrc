@@ -154,3 +154,8 @@ __loadzsh peco.zsh
 __loadzsh node.zsh
 __loadzsh android.zsh
 __loadzsh flutter.zsh
+
+if [ -e "$ZDOTDIR/custom.zsh" ]; then
+  __loadzsh custom.zsh
+  echo "Custom script has been loaded."
+fi
