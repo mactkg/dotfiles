@@ -1,0 +1,19 @@
+#!/bin/sh
+
+FILTER=peco
+
+hn="$(tailscale status  -json | jq -r '.Peer[].HostName' | ${FILTER})"
+dns="$(tailscale status -json | jq -r ".Peer[] | select(.HostName == \"${hn}\") | .DNSName")"
+
+if [ -z $dns ];then
+  echo "Magic DNS name of ${hn} was not found."
+  exit 1
+fi
+
+read -p "username for ${dns} (blank return to use default): " un
+
+if [ -z $un ];then
+  ssh "${dns}"
+else
+  ssh "${un}@${dns}"
+fi

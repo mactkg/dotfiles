@@ -1,1 +1,2 @@
-EXCLUDES="zsh/colors README.md secrets config/brewfile"
+EXCLUDES="zsh/colors README.md secrets config/brewfile/Brewfile.lock"
+UNDOTTED="local"
