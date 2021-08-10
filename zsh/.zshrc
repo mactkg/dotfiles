@@ -52,7 +52,7 @@ alias vi='nvim'
 alias vim='nvim'
 alias ce='carton exec --'
 alias be='bundle exec'
-alias d-c='docker-compose'
+alias d-c='docker compose'
 
 alias x86='arch -x86_64'
 
