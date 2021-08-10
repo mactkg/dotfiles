@@ -1,25 +1,13 @@
-このコミットを適用すると、どうなるかを１行で言うと？
 
-なぜこの変更が為されたのか？その他補足情報
 
-チケットやissueなど、関係するリソースへのリンク
-
-# ==== Emojis ====
-# :bug: バグ修正
-# :+1: 機能改善
-# :sparkles: 部分的な機能追加
-# :tada: 盛大に祝うべき大きな機能追加
-# :recycle: リファクタリング
-# :shower: 不要な機能・使われなくなった機能の削除
-# :green_heart: テストやCIの修正・改善
-# :shirt: Lintエラーの修正やコードスタイルの修正
-# :rocket: パフォーマンス改善
-# :up: 依存パッケージなどのアップデート
-# :pencil2: ドキュメントの追加
-# :construction: WIP
-# :speaker: ログの追加
-# :mute: ログの削除
-# :art: 見た目に関わる修正
-# :lock: 新機能の公開範囲の制限
-# :cop: セキュリティ関連の改善
-
+# Conventional Commits templates
+# build: Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)
+# ci: Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs)
+# docs: Documentation only changes
+# feat: A new feature
+# fix: A bug fix
+# perf: A code change that improves performance
+# refactor: A code change that neither fixes a bug nor adds a feature
+# style: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
+# test: Adding missing tests or correcting existing tests
+# https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#type
