@@ -9,5 +9,5 @@ set id-width = 8
 set diff-context = 6
 set vertical-split = no
 
-# show diff at merge commit
-set diff-options = -m --first-parent
+# show diff at merge commit / ignore new line codes
+set diff-options = -m --first-parent -w
