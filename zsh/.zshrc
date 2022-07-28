@@ -9,10 +9,10 @@ typeset -U sudo_path
 sudo_path=({/usr/local,/usr,}/sbin(N-/))
 
 # homebrew setting
-if [ -d /usr/local/bin ]; then
-  eval $(/usr/local/bin/brew shellenv)
-else
+if [ -d /opt/homebrew/bin ]; then
   eval $(/opt/homebrew/bin/brew shellenv)
+else
+  eval $(/usr/local/bin/brew shellenv)
 fi
 export PATH=/sbin:/usr/sbin:$HOME/local/bin:$PATH
 

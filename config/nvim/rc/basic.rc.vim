@@ -2,8 +2,12 @@ syntax enable
 filetype indent on
 filetype plugin indent on
 
- let g:python3_host_prog = '/usr/local/bin/python3'
-" let g:python_host_prog = $PYENV_ROOT . '/versions/2.7.11/bin'
+if isdirectory("/opt/homebrew/bin")
+  let g:python3_host_prog = '/opt/homebrew/bin/python3'
+else
+  let g:python3_host_prog = '/usr/local/bin/python3'
+endif
+
 let g:ruby_path = $HOME . '/.rbenv/shims'
 
 " tab
