@@ -1,0 +1,16 @@
+#!/bin/bash -e
+
+id=$(gh pr list | cut -f 1-2 | peco | cut -f 1)
+
+case "$1" in
+  --web)
+    gh pr view ${id} --web ;;
+  *)
+    echo -n "checkout or web(default: checkout)[Cw] "
+    read str
+    case "$str" in
+      [Ww]) gh pr view ${id} --web;;
+      [Cc]) gh pr checkout ${id};;
+      *) gh pr checkout ${id};;
+    esac;;
+esac
