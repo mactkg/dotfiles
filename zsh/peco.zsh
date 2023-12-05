@@ -2,6 +2,7 @@
 # peco-history-selection(^R): History
 # peco-find(^F): Find file
 # peco-src(^]): Move to local repository which managed with GHQ
+# peco-pr(^g^p): list pr and checkout selected one
 # peco-man(N/A): Find man file
 
 function peco-history-selection() {
@@ -70,3 +71,14 @@ function peco-man() {
         man "$selected"
     fi
 }
+
+function peco-checkout-pull-request () {
+    local selected_pr_id=$(gh pr list | peco | awk '{ print $1 }')
+    if [ -n "$selected_pr_id" ]; then
+        BUFFER="gh pr checkout ${selected_pr_id}"
+        zle accept-line
+    fi
+    zle clear-screen
+}
+zle -N peco-checkout-pull-request
+bindkey '^g^p' peco-checkout-pull-request 
