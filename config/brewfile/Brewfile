@@ -43,6 +43,7 @@ brew "zsh"
 brew "zsh-syntax-highlighting"
 
 cask "alfred"
+cask "alt-tab"
 cask "coteditor"
 cask "clipy"
 cask "dash"
