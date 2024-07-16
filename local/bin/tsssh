@@ -2,7 +2,7 @@
 
 FILTER=peco
 
-hn="$(tailscale status  -json | jq -r '.Peer[].HostName' | ${FILTER})"
+hn="$(tailscale status  -json | jq -r '.Peer[] | select(.Online == true) | .HostName' | ${FILTER})"
 dns="$(tailscale status -json | jq -r ".Peer[] | select(.HostName == \"${hn}\") | .DNSName")"
 
 if [ -z $dns ];then
