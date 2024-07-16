@@ -1,2 +1,7 @@
-EXCLUDES="zsh/colors README.md secrets config/brewfile/Brewfile.lock"
-UNDOTTED="Library local"
+if [ `uname -s` = "Darwin" ]; then
+  EXCLUDES="zsh/colors README.md secrets config/brewfile/Brewfile.lock"
+  UNDOTTED="Library local"
+else
+  EXCLUDES="Library zsh/colors README.md secrets config/brewfile/Brewfile.lock"
+  UNDOTTED="local"
+fi

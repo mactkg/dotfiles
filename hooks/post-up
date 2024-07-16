@@ -1,10 +1,13 @@
 #!/bin/sh
 RCROOT=$(cd $(dirname $0)/.. && pwd)
+KERNEL=$(uname -s)
 
-if type brew; then
-  echo 'homebrew is already installed'
-else
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+if [ $KERNEL = Darwin ]; then
+  if type brew; then
+    echo 'homebrew is already installed'
+  else
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+  fi
 fi
 
 if [ ! -e $HOME/.zsh/colors/dircolors-solarized ]; then
