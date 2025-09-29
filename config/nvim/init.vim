@@ -29,8 +29,6 @@ function! s:source_rc(path, ...) abort "{{{
   endtry
 endfunction "}}}
 
-call s:source_rc('dein.rc.vim')
-
 " suffix
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
 
