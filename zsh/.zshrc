@@ -11,12 +11,14 @@ sudo_path=({/usr/local,/usr,}/sbin(N-/))
 # homebrew setting
 if [ -d /opt/homebrew/bin ]; then
   eval $(/opt/homebrew/bin/brew shellenv)
+  export PATH=/opt/homebrew/share/google-cloud-sdk/bin:"$PATH"
 else
   eval $(/usr/local/bin/brew shellenv)
 fi
 export PATH=/sbin:/usr/sbin:$HOME/local/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
 
-fpath=(~/.zsh/completion $fpath)
+fpath=(~/.zsh/completions $fpath)
 fpath=($HOMEBREW_PREFIX/share/zsh-completions $fpath)
 fpath=($HOMEBREW_PREFIX/share/zsh/site-functions $fpath)
 autoload -Uz compinit
@@ -159,3 +161,16 @@ if [ -e "$ZDOTDIR/custom.zsh" ]; then
   __loadzsh custom.zsh
   echo "Custom script has been loaded."
 fi
+
+# pnpm
+export PNPM_HOME="/Users/kenta.harasa-nu.com/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+# gw shell integration
+eval "$(gw shell-integration --show-script --shell=zsh)"
+
+
