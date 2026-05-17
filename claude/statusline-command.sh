@@ -38,9 +38,18 @@ else
   # Default to 0 if no valid result
   total_tokens=${total_tokens:-0}
 
-  # max token count: 200k
-  # compaction threshold: 80% (160k)
-  COMPACTION_THRESHOLD=160000
+  # Determine context window based on model display name.
+  # 1M context variants advertise "(1M context)" in the display name.
+  # compaction threshold = 80% of max.
+  case "$MODEL_DISPLAY" in
+    *1M*)
+      CONTEXT_MAX=1000000
+      ;;
+    *)
+      CONTEXT_MAX=200000
+      ;;
+  esac
+  COMPACTION_THRESHOLD=$((CONTEXT_MAX * 80 / 100))
   # Calculate percentage
   percentage=$((total_tokens * 100 / COMPACTION_THRESHOLD))
 
