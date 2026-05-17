@@ -81,4 +81,12 @@ function peco-checkout-pull-request () {
     zle clear-screen
 }
 zle -N peco-checkout-pull-request
-bindkey '^g^p' peco-checkout-pull-request 
+bindkey '^g^p' peco-checkout-pull-request
+
+function peco-gtr-switch () {
+  local branch=$(git gtr list --porcelain | grep -E 'ok$' | cut -f2 | peco)
+  cd "$(git gtr go $branch)"
+}
+zle -N peco-gtr-switch
+bindkey '^g^w' peco-gtr-switch
+
