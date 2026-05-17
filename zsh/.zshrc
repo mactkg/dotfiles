@@ -21,6 +21,7 @@ export PATH=$HOME/.local/bin:$PATH
 fpath=(~/.zsh/completions $fpath)
 fpath=($HOMEBREW_PREFIX/share/zsh-completions $fpath)
 fpath=($HOMEBREW_PREFIX/share/zsh/site-functions $fpath)
+eval "$(git gtr completion zsh)"
 autoload -Uz compinit
 compinit -Cu
 
@@ -149,7 +150,7 @@ function __loadzsh {
 
 __loadzsh zsh.zsh
 __loadzsh anyenv.zsh
-__loadzsh asdf.zsh
+__loadzsh mise.zsh
 __loadzsh git.zsh
 __loadzsh go.zsh
 __loadzsh peco.zsh
