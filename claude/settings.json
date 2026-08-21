@@ -3,8 +3,19 @@
     "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
   },
   "permissions": {
+    "allow": [
+      "Bash(hunk session list)",
+      "Bash(hunk session list:*)",
+      "Bash(hunk session get:*)",
+      "Bash(hunk session context:*)",
+      "Bash(hunk session review:*)",
+      "Bash(hunk session navigate:*)",
+      "Bash(hunk session reload:*)",
+      "Bash(hunk session comment:*)"
+    ],
     "defaultMode": "auto"
   },
+  "model": "claude-opus-4-7[1m]",
   "hooks": {
     "WorktreeCreate": [
       {
@@ -37,10 +48,76 @@
     "frontend-design@claude-plugins-official": true,
     "feature-dev@claude-plugins-official": true,
     "typescript-lsp@claude-plugins-official": true,
-    "code-review@claude-plugins-official": true
+    "code-review@claude-plugins-official": true,
+    "chrome-devtools-mcp@claude-plugins-official": true,
+    "agentkit-shopify@worldcoin-agentkit": true,
+    "crit@crit": true,
+    "superpowers@claude-plugins-official": true,
+    "compact-plus@compact-plus-local": true,
+    "cwc-makers@claude-plugins-official": true
+  },
+  "extraKnownMarketplaces": {
+    "compact-plus-local": {
+      "source": {
+        "source": "settings",
+        "name": "compact-plus-local",
+        "plugins": [
+          {
+            "name": "compact-plus",
+            "description": "Preserve Claude Code and Codex session state around context compaction.",
+            "source": {
+              "source": "github",
+              "repo": "u-ichi/compact-plus",
+              "sha": "acb5b80a2daecc28d701929c934832393ca1f710"
+            }
+          }
+        ]
+      }
+    },
+    "crit": {
+      "source": {
+        "source": "settings",
+        "name": "crit",
+        "plugins": [
+          {
+            "name": "crit",
+            "description": "Close the feedback loop on AI coding: review plans and code changes with GitHub-style inline comments, then let the agent address them.",
+            "source": {
+              "source": "git-subdir",
+              "url": "tomasz-tomczyk/crit",
+              "path": "integrations/claude-code",
+              "sha": "2f6fb51f01e5aeefa84f26d761f1a3748e2e93ae"
+            }
+          }
+        ]
+      }
+    },
+    "worldcoin-agentkit": {
+      "source": {
+        "source": "settings",
+        "name": "worldcoin-agentkit",
+        "plugins": [
+          {
+            "name": "agentkit-shopify",
+            "description": "Unlock exclusive human-only discounts on Shopify stores using World AgentKit",
+            "source": {
+              "source": "github",
+              "repo": "worldcoin/agentkit-shopify-demo",
+              "sha": "6133dd9b13dc5d95941df69cef55458d4cb0942d"
+            }
+          }
+        ]
+      }
+    }
   },
   "language": "Japanese",
   "alwaysThinkingEnabled": true,
+  "effortLevel": "xhigh",
+  "tui": "fullscreen",
+  "theme": "dark",
+  "teammateMode": "auto",
+  "remoteControlAtStartup": false,
+  "agentPushNotifEnabled": true,
   "skipAutoPermissionPrompt": true,
-  "effortLevel": "high"
+  "voiceEnabled": true
 }
