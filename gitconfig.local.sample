@@ -1,0 +1,29 @@
+# Machine-local git config overrides.
+#
+# This file is NOT tracked in dotfiles. It is included from ~/.gitconfig
+# via
+#   [include]
+#       path = ~/.gitconfig.local
+# and wins over anything above it — anything you set here overrides the
+# machine-neutral defaults in ~/.dotfiles/gitconfig.
+#
+# `hooks/post-up` seeds this file from the .sample once (idempotent —
+# never clobbers an existing ~/.gitconfig.local). An empty file is fine:
+# the mactkg <mactkg@gmail.com> defaults from the dotfiles gitconfig
+# will apply as-is.
+#
+# Uncomment (and edit) any block below when this machine needs to differ.
+
+# Work identity for this machine (name / email / signing key):
+# [user]
+#	name = Your Work Name
+#	email = your.work.email@example.com
+#	signingkey = ~/.ssh/id_git_sign
+
+# Custom SSH signer binary (path varies per machine):
+# [gpg "ssh"]
+#	program = ~/.local/bin/ssh-sign
+
+# Repos to include in `git maintenance start` (absolute paths only):
+# [maintenance]
+#	repo = /absolute/path/to/repo

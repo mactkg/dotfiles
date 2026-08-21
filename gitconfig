@@ -1,45 +1,78 @@
+# Machine-neutral git config.
+#
+# Defaults here are the personal (mactkg) identity. Machine-specific
+# overrides — work identity, absolute paths, signing binaries — live in
+# ~/.gitconfig.local and are included at the bottom so they win.
+
 [user]
 	name = mactkg
 	email = mactkg@gmail.com
+
 [core]
-  quotepath = false
+	quotepath = false
 	autocrlf = input
-  excludesfile = ~/.gitignore
+	excludesfile = ~/.gitignore
 	editor = vi
+
 [color]
-  diff = auto
-  status = auto
-  branch = auto
-  grep = auto
+	diff = auto
+	status = auto
+	branch = auto
+	grep = auto
+
 [alias]
-  st = status
-  co = checkout
-  ci = commit -v
-  di = diff
-  br = branch -v
-  pl = !git pull --rebase && git submodule update --init
-  lg = log -p --stat --abbrev-commit --decorate --topo-order
-  lg-r = log -p --stat --abbrev-commit --decorate --topo-order --reverse
+	st = status
+	co = checkout
+	ci = commit -v
+	di = diff
+	br = branch -v
+	pl = !git pull --rebase && git submodule update --init
+	lg = log -p --stat --abbrev-commit --decorate --topo-order
+	lg-r = log -p --stat --abbrev-commit --decorate --topo-order --reverse
+
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+
 [fetch]
 	prune = true
+
 [commit]
 	template = ~/.gitmessage
+	gpgsign = true
+
+[tag]
+	gpgsign = true
+
 [ghq]
-  root = ~/local/src
-[include]
-  path = ~/.gitconfig.secrets
+	root = ~/local/src
+
 [credential]
-  helper = osxkeychain
+	helper = osxkeychain
+
 [merge]
 	tool = vimdiff
+
 [pull]
 	rebase = false
-[include]
-  path = .gitconfig.local
+
 [init]
 	defaultBranch = main
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
+[gpg]
+	format = ssh
+
+# Machine-local overrides: [user], [maintenance], [gpg "ssh"] program path.
+# Kept last so anything set here wins.
+[include]
+	path = ~/.gitconfig.secrets
+	path = ~/.gitconfig.local

@@ -15,3 +15,9 @@ if [ ! -e $HOME/.zsh/colors/dircolors-solarized ]; then
 fi
 
 cp -n $RCROOT/secrets $HOME/.secrets
+
+if [ ! -e $HOME/.gitconfig.local ]; then
+  cp $RCROOT/gitconfig.local.sample $HOME/.gitconfig.local
+  chmod 600 $HOME/.gitconfig.local
+  echo "seeded $HOME/.gitconfig.local — edit [user] before your first commit"
+fi
